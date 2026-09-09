@@ -123,7 +123,7 @@ test("a blank project name never becomes a board that swallows every later proje
   } finally { c.close(); }
 });
 
-test.skip("due dates: 2026-13-45 refused, weekdays and relative days accepted", async () => {
+test("due dates: 2026-13-45 refused, weekdays and relative days accepted", async () => {
   const c = client();
   try {
     await c.init();
@@ -189,7 +189,7 @@ test.skip("columns: unknown target refused, and blanks cannot collapse a board t
   } finally { c.close(); }
 });
 
-test.skip("deleting a task with logged time says what was lost and does not touch the time tracker", async () => {
+test("deleting a task with logged time says what was lost and does not touch the time tracker", async () => {
   const c = client();
   try {
     await c.init();

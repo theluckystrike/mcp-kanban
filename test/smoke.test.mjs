@@ -2,6 +2,9 @@
 // lives only in the monorepo (keys/license-private.pem); run them there.
 // Mirror note: tests that run a script from the monorepo's scripts/ directory are
 // skipped here. That directory is not part of a server folder; run them in the monorepo.
+// Mirror note: tests that read another server's source out of the monorepo are
+// skipped here. A mirror holds one server and vendors a sibling's dist, never its
+// src, so there is nothing to read; run them in the monorepo.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawn, execFileSync } from "node:child_process";
