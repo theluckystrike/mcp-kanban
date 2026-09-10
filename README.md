@@ -1,13 +1,45 @@
 # mcp-kanban
 
+<!-- mirror-seo:start -->
+
+**MCP server for a kanban task board and project board.** A task board per project that hands off to the time tracker.
+
+Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
+
+## Install
+
+**Hosted, nothing to install.** Point an MCP client at `https://mcp.zovo.one/mcp/kanban` over streamable-http and send `Authorization: Bearer <token>`, where the token is a Pro key or a free anonymous one from <https://mcp.zovo.one/mcp/token>.
+
+**Claude Desktop, one click.** Download `kanban.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it.
+
+**From source.** The mirror is self-contained: every `@theluckystrike/*` dependency is vendored, so a fresh clone builds with no extra setup.
+
+```sh
+git clone https://github.com/theluckystrike/mcp-kanban.git
+cd mcp-kanban
+npm install && npm run build
+```
+
+Then point your client at the built entry point:
+
+```json
+{
+  "mcpServers": {
+    "kanban": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-kanban/dist/index.js"]
+    }
+  }
+}
+```
+
+> `@theluckystrike/mcp-kanban` is **not published on npm yet**, so an `npx -y @theluckystrike/mcp-kanban` command will fail. The three paths above are the working ones and each is exercised by CI.
+
 ![kanban demo](https://raw.githubusercontent.com/theluckystrike/mcp-servers/main/assets/demo-kanban.gif)
-
-**One-click install:** download `kanban.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it in Claude Desktop.
-
-**Hosted endpoint (no install):** `https://mcp.zovo.one/mcp/kanban` (streamable-http; send `Authorization: Bearer <Pro key or anonymous token from https://mcp.zovo.one/mcp/token>`).
 
 Read-only mirror of [mcp-servers/servers/kanban](https://github.com/theluckystrike/mcp-servers/tree/main/servers/kanban). See [MIRROR.md](MIRROR.md).
 
+<!-- mirror-seo:end -->
 
 A task board for each of your projects, driven from your AI chat. Say "add a task to the nova site board: write the
 launch email, due Friday, 90 minutes", then ask "what's on the nova board?", "what's overdue?" or "plan my week".
