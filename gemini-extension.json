@@ -1,6 +1,6 @@
 {
   "name": "mcp-kanban",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "MCP server for a kanban task board and project board. A task board per project that hands off to the time tracker.",
   "settings": [
     {
